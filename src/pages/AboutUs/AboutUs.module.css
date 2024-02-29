@@ -1,0 +1,13 @@
+.aboutUs {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.aboutUs h2 {
+    margin-bottom: 15px;
+}
+
+.aboutUs p {
+    margin-bottom: 10px;
+}

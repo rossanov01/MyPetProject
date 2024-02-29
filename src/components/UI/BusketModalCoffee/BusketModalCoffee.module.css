@@ -1,0 +1,43 @@
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.itemCoffee {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.itemCoffee img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 20px;
+}
+.quanitity {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+}
+.item button {
+    background-color: #3498db;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: white;
+}
+
+.item button:hover {
+    background-color: #f0f0f0;
+    color: black;
+}
+.deleteIcon {
+    cursor: pointer;
+    background-color: red;
+    color: red;
+    font-size: 20px;
+}

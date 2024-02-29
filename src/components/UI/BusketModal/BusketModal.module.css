@@ -1,0 +1,99 @@
+.modal {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: black;
+    transition:
+        opacity 0.3s,
+        visibility 0.3s;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    width: 60%;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-50px);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.basketItem {
+    list-style: none;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.basketItemInfo {
+    display: flex;
+    align-items: center;
+}
+
+.basketItemImage {
+    width: 70px;
+    height: 70px;
+    margin-right: 20px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.basketItemDetails {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.basketItemControls {
+    display: flex;
+    align-items: center;
+}
+
+.basketItemDelete {
+    cursor: pointer;
+    font-size: 20px;
+    color: #ff0000;
+    transition: transform 0.3s ease-in-out;
+}
+
+.basketItemDelete:hover {
+    transform: scale(1.2);
+}
+
+.total {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+}

@@ -1,0 +1,83 @@
+.coffee {
+    display: flex;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.coffeeImage {
+    flex: 0 0 40%;
+    margin-right: 20px;
+}
+.coffeeImage img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.coffeeInfo {
+    padding: 20px;
+}
+.cofContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.coffee h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.cofSelection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cofSelection div,
+.cofSelection p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cofSelection button,
+.cofSelection select,
+.cofSelection input {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.cofSelection p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.cofSelection button {
+    cursor: pointer;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    padding: 8px 0;
+    transition: background-color 0.3s ease-in-out;
+    width: 150px;
+}
+
+.cofSelection button:hover {
+    background-color: #2980b9;
+}
+.cofSelection button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+.cofSelection .cofSize {
+    display: flex;
+    gap: 20px;
+}
+.cofSelection .buttonCounters {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.cofSelection .buttonCounters button {
+    width: 30px;
+    border-radius: 20px;
+}

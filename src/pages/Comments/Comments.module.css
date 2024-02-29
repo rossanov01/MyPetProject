@@ -1,0 +1,38 @@
+.commentsContainer {
+    width: 70%;
+    margin: 0 auto;
+    height: 100%;
+    padding: 20px;
+}
+.sortContainer {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+.sortContainer label {
+    margin-right: 10px;
+}
+
+.sortContainer select {
+    margin-left: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 16px;
+}
+
+.addButton {
+    cursor: pointer;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    padding: 8px 0;
+    transition: background-color 0.3s ease-in-out;
+    width: 150px;
+}
+
+.addButton:hover {
+    background-color: #0056b3;
+}

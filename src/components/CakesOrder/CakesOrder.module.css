@@ -1,0 +1,38 @@
+.CakesOrder {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20vh;
+}
+
+.CakesOrderTitle {
+    margin-bottom: 20px;
+}
+
+.CakesOrderTitle h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.CakesOrderList {
+    width: 100%;
+}
+
+.OrderFilter {
+    margin-bottom: 20px;
+}
+
+.OrderFilter select {
+    margin-left: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 16px;
+}
+
+.CakeItemList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

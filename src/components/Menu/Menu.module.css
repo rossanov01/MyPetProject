@@ -1,0 +1,49 @@
+.menu {
+    display: flex;
+    color: white;
+    background: linear-gradient(117deg, #00000082, #000000f7);
+    flex-direction: column;
+    height: 75vh;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.menuTitie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.menuContainer {
+    display: flex;
+}
+.menuContainer {
+    display: flex;
+    justify-content: space-between;
+}
+.menuContainer > div {
+    flex: 1;
+    margin-right: 20px;
+}
+.menuContainer > div:not(:last-child) {
+    border-right: 1px solid #ddd;
+    padding-right: 20px;
+}
+.menuBtn {
+    font-size: 1em;
+    margin-top: 20px;
+    width: 140px;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    color: white;
+    background-color: black;
+    transition: background-color 0.5s ease;
+}
+.menuBtn:hover {
+    border: 2px solid black;
+    color: black;
+    background-color: white;
+}

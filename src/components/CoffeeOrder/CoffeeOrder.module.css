@@ -1,0 +1,29 @@
+.CoffeeOrder {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20vh;
+}
+.CoffeeOrderTitle {
+    margin-bottom: 20px;
+}
+.CoffeeOrderList {
+    width: 100%;
+}
+
+.OrderFilter {
+    margin-bottom: 20px;
+}
+
+.OrderFilter select {
+    margin-left: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 16px;
+}
+
+.CoffeeItemList {
+    gap: 20px;
+}

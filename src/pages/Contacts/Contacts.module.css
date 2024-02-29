@@ -1,0 +1,13 @@
+.contacts {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.contactInfo {
+    margin-top: 15px;
+}
+
+.contactInfo p {
+    margin-bottom: 10px;
+}

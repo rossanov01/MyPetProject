@@ -1,0 +1,64 @@
+.header {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    color: white;
+    margin-bottom: 20px;
+    background-color: rgb(0, 0, 0);
+}
+.header_navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header_logo {
+    display: flex;
+    align-items: center;
+}
+
+.header_logo img {
+    min-width: 120px;
+    height: 120px;
+    margin-right: 20px;
+}
+
+.header_logo div {
+    display: flex;
+    flex-direction: column;
+}
+
+.header_logo h4 {
+    font-size: 14px;
+    color: #777;
+    margin: 0;
+}
+
+.buttonBasket {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.buttonBasket:hover {
+    background-color: #2980b9;
+}
+.header_NavAndBus {
+    display: flex;
+    align-items: baseline;
+}
+.header_mainImg {
+    display: flex;
+    justify-content: center;
+}
+.header_mainImg_img {
+    width: 55vw;
+}
+.header h2 {
+    text-align: center;
+}

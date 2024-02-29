@@ -1,0 +1,87 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    min-width: 40vw;
+    min-height: 50vh;
+}
+
+.modalClosed {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.modalContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.modalImg {
+    width: 30vh;
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #555;
+}
+
+.options {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.options h4 {
+    font-size: 16px;
+}
+
+.options button,
+.options select,
+.options input {
+    margin: 5px 0;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.options button {
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.options button:hover {
+    background-color: #2980b9;
+}
+
+.options button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+.optionsContainer {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}

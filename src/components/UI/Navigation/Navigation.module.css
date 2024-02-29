@@ -1,0 +1,61 @@
+.navigation {
+    display: flex;
+    margin-top: 20px;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.navigation li {
+    margin-right: 20px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: rgb(187, 184, 184);
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.5s ease;
+}
+
+.navigation a:hover {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.burgerMenu {
+    display: none;
+    cursor: pointer;
+}
+
+.menuDropdown {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.menuDropdown.active {
+    display: flex;
+    flex-direction: column;
+}
+
+.burgerIcon {
+    font-size: 24px;
+}
+
+@media (max-width: 1024px) {
+    .navigation ul {
+        display: none;
+    }
+
+    .burgerMenu {
+        display: block;
+    }
+}

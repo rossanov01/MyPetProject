@@ -1,0 +1,41 @@
+.PeopleSay {
+    height: 70vh;
+    background-image: linear-gradient(173deg, rgb(8 8 8) 0%, rgb(255 255 255 / 0%) 100%),
+        url("https://img.freepik.com/premium-photo/happy-family-parents-and-kids-share-cakes-in-cafe_85574-8150.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-top: 8px solid grey;
+    border-bottom: 8px solid grey;
+}
+.PeopleSayTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.PeopleSayBtn {
+    font-size: 1em;
+    margin-top: 20px;
+    width: 130px;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition:
+        background-color 0.5s ease,
+        color 0.5s ease;
+    color: white;
+    background-color: black;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+}
+
+.PeopleSayBtn:hover {
+    color: black;
+    background-color: white;
+    border: 2px solid silver;
+}

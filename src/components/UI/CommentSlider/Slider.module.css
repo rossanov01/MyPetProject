@@ -1,0 +1,62 @@
+.slider {
+    width: 120vh;
+    margin: 0 auto;
+}
+
+.slide {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    padding: 20px;
+    background-color: white;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slide img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+.slide h4 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+.slide p {
+    font-size: 14px;
+    color: #666;
+}
+.active {
+    opacity: 1;
+}
+.slick-prev,
+.slick-next {
+    font-size: 30px; /* Измените размер по вашему желанию */
+    line-height: 1;
+    opacity: 0.75;
+    color: #ada9a9;
+    -webkit-font-smoothing: antialiased;
+}
+.slideContentAvaRate {
+    display: flex;
+    align-items: center;
+}
+.slideContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10px;
+}
+.rating {
+    display: flex;
+    color: gold;
+    padding-left: 20px;
+}
+.rating span {
+    font-size: 24px;
+    margin-right: 5px;
+}
