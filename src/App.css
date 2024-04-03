@@ -21,20 +21,18 @@ h1 {
   font-size: 28px;
 }
 h2 {
-  font-size: 26px;
+  font-size: 24px;
 }
 h3 {
-  font-size: 24px;
+  font-size: 28px;
 }
 h4 {
   font-size: 24px;
-  margin-bottom: 10px;
 }
 h5 {
   font-size: 20px;
 }
 h6 {
-  margin-top: 20px;
   font-size: 18px;
 }
 h7 {
@@ -43,6 +41,58 @@ h7 {
 p {
   font-style: italic;
   font-family: Lora, serif;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.5;
+}
+@media (min-width: 729px) and (max-width: 1024px) {
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  h3 {
+    font-size: 25px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+  h5 {
+    font-size: 19px;
+  }
+  h6 {
+    font-size: 18px;
+  }
+  h7 {
+    font-size: 16px;
+  }
+  p {
+    font-size: 20px;
+  }
+}
+@media (max-width: 729px) {
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 22px;
+  }
+  h4 {
+    font-size: 18px;
+  }
+  h5 {
+    font-size: 22px;
+  }
+  h6 {
+    font-size: 18px;
+  }
+  h7 {
+    font-size: 16px;
+  }
+  p {
+    font-size: 18px;
+  }
 }

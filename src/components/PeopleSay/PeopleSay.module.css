@@ -1,26 +1,28 @@
 .PeopleSay {
-    height: 70vh;
-    background-image: linear-gradient(173deg, rgb(8 8 8) 0%, rgb(255 255 255 / 0%) 100%),
-        url("https://img.freepik.com/premium-photo/happy-family-parents-and-kids-share-cakes-in-cafe_85574-8150.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
+    background: white;
+    color: black;
+    justify-content: space-around;
+    border-bottom: 8px solid grey;
+    padding: 20px;
+    gap: 40px;
+}
+.container {
+    width: 1015px;
     display: flex;
+    margin: 0 auto;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    border-top: 8px solid grey;
-    border-bottom: 8px solid grey;
+    gap: 15px;
 }
 .PeopleSayTitle {
     display: flex;
+    margin-top: 30px;
     flex-direction: column;
     align-items: center;
     gap: 10px;
 }
 .PeopleSayBtn {
-    font-size: 1em;
-    margin-top: 20px;
+    font-size: 0.9em;
     width: 130px;
     padding: 10px;
     border-radius: 20px;
@@ -30,7 +32,6 @@
         color 0.5s ease;
     color: white;
     background-color: black;
-    border: 2px solid transparent;
     box-sizing: border-box;
 }
 
@@ -38,4 +39,21 @@
     color: black;
     background-color: white;
     border: 2px solid silver;
+}
+@media (min-width: 729px) and (max-width: 1024px) {
+    .container {
+        width: 100%;
+    }
+}
+@media (max-width: 729px) {
+    .PeopleSay {
+        padding: 20px 0px;
+    }
+    .container {
+        width: 100%;
+    }
+    .PeopleSayBtn {
+        width: 80px;
+        font-size: 0.6em;
+    }
 }

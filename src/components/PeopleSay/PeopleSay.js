@@ -9,12 +9,14 @@ export const PeopleSay = () => {
 
     return (
         <div className={styles.PeopleSay}>
-            <div className={styles.PeopleSayTitle}>
-                <h3>Что люди говорят о нас</h3>
-                <p>Мы ценим отзывы наших клиентов</p>
+            <div className={styles.container}>
+                <div className={styles.PeopleSayTitle}>
+                    <h3>Что люди говорят о нас</h3>
+                    <p>Мы ценим отзывы наших клиентов</p>
+                </div>
+                <CommentSlider comments={comments} />
+                <Link to="/comments"><button className={styles.PeopleSayBtn}>Ещё</button></Link>
             </div>
-            <CommentSlider comments={comments} />
-            <Link to="/comments"><button className={styles.PeopleSayBtn}>Ещё</button></Link>
         </div>
     );
 };

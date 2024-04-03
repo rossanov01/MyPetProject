@@ -54,7 +54,7 @@
 .cofSelection button {
     cursor: pointer;
     border: none;
-    background-color: #3498db;
+    background-color: #ddb892;
     color: white;
     padding: 8px 0;
     transition: background-color 0.3s ease-in-out;
@@ -62,7 +62,7 @@
 }
 
 .cofSelection button:hover {
-    background-color: #2980b9;
+    background-color: #996e50;
 }
 .cofSelection button:disabled {
     background-color: #ccc;
@@ -80,4 +80,21 @@
 .cofSelection .buttonCounters button {
     width: 30px;
     border-radius: 20px;
+}
+@media (max-width: 729px) {
+    .coffee {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .coffeeImage {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-right: 0px;
+    }
+    .coffeeImage img {
+        width: 300px;
+    }
 }

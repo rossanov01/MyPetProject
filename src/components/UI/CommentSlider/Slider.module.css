@@ -1,62 +1,100 @@
 .slider {
-    width: 120vh;
+    position: relative;
+    width: 100%;
     margin: 0 auto;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: white;
+    color: black;
 }
 
 .slide {
-    border-radius: 20px;
+    position: relative;
+    width: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: left;
-    padding: 20px;
-    background-color: white;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    justify-content: center;
+    text-align: center;
 }
 
-.slide img {
-    width: 50px;
-    height: 50px;
+.slideContent {
+    padding: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: opacity 0.5s ease;
+    padding-left: 60px;
+    border: 2px solid grey;
+    border-radius: 20px;
+}
+.avatar {
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    border: 2px solid black;
+    margin-bottom: 10px;
+    margin-right: 20px;
 }
-.slide h4 {
-    margin: 10px 0;
-    font-size: 18px;
-    color: #333;
+
+.rating {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: orange;
 }
-.slide p {
-    font-size: 14px;
-    color: #666;
-}
-.active {
-    opacity: 1;
-}
-.slick-prev,
-.slick-next {
-    font-size: 30px; /* Измените размер по вашему желанию */
-    line-height: 1;
-    opacity: 0.75;
-    color: #ada9a9;
-    -webkit-font-smoothing: antialiased;
-}
-.slideContentAvaRate {
+.title {
     display: flex;
     align-items: center;
 }
-.slideContent {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 10px;
+.prevBtn,
+.nextBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    color: black;
+    font-size: 44px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
 }
-.rating {
-    display: flex;
-    color: gold;
-    padding-left: 20px;
+.prevBtn {
+    left: 0px;
 }
-.rating span {
-    font-size: 24px;
-    margin-right: 5px;
+
+.nextBtn {
+    right: 0px;
+}
+.prevBtn:hover,
+.nextBtn:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    transition: transform 0.3s ease;
+}
+@media (max-width: 729px) {
+    .slideContent {
+        padding: 40px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+    .prevBtn {
+        font-size: 34px;
+    }
+    .nextBtn {
+        font-size: 34px;
+    }
+    .rating {
+        font-size: 25px;
+    }
+    .avatar {
+        margin-right: 10px;
+        width: 70px;
+        height: 70px;
+    }
 }

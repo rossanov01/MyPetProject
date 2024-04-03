@@ -2,7 +2,7 @@
     opacity: 0;
     visibility: hidden;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     left: 0;
     top: 0;
     width: 100%;
@@ -14,19 +14,29 @@
         opacity 0.3s,
         visibility 0.3s;
 }
-
 .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
     background-color: #fefefe;
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #ddd;
-    width: 60%;
+    width: 700px;
     transition: transform 0.3s ease-in-out;
     transform: translateY(-50px);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
+.busket {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    gap: 20px;
+}
 .modal.open {
     opacity: 1;
     visibility: visible;
@@ -34,10 +44,15 @@
 
 .close {
     color: #aaa;
-    float: right;
+    position: absolute;
+    top: 10px;
+    right: 10px;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
 }
 
 .close:hover,
@@ -45,55 +60,75 @@
     color: black;
     text-decoration: none;
 }
-
-.basketItem {
-    list-style: none;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.totalSum {
+    margin-top: 20px;
 }
-
-.basketItemInfo {
-    display: flex;
-    align-items: center;
-}
-
-.basketItemImage {
-    width: 70px;
-    height: 70px;
-    margin-right: 20px;
-    border-radius: 8px;
-    object-fit: cover;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.basketItemDetails {
-    flex-grow: 1;
+.detailsOrder {
     display: flex;
     flex-direction: column;
+    gap: 20px;
+    margin: 20px 0px;
+    text-align: left;
+}
+.detailsOrder input {
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+.detailsOrder textarea {
+    padding: 10px;
+    height: 250px;
+    resize: none;
+}
+.detailsOrder select {
+    padding: 10px;
 }
 
-.basketItemControls {
+.delivery {
     display: flex;
     align-items: center;
+    gap: 10px;
 }
-
-.basketItemDelete {
+.delivery input {
+    padding: 0;
+    margin-bottom: 0px;
+    height: 22px;
+    width: 40px;
+}
+.delivery p {
+    font-size: 16px;
+}
+.totalAmount {
+    text-align: right;
+}
+.totalAmount p {
+    font-size: 16px;
+}
+.orderButton {
+    margin-top: 20px;
+    background-color: #ddb892;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
     cursor: pointer;
-    font-size: 20px;
-    color: #ff0000;
-    transition: transform 0.3s ease-in-out;
+    border-radius: 8px;
 }
 
-.basketItemDelete:hover {
-    transform: scale(1.2);
+.orderButton:hover {
+    background-color: #996e50;
 }
-
-.total {
-    font-weight: bold;
-    font-size: 18px;
-    margin-top: 10px;
+@media (min-width: 729px) and (max-width: 1024px) {
+    .modal-content {
+        width: 700px;
+    }
+}
+@media (max-width: 729px) {
+    .modal-content {
+        width: 400px;
+    }
 }

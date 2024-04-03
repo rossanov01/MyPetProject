@@ -9,7 +9,7 @@ import { MainPage } from './pages/MainPage/MainPage';
 import { Footer } from './components/Footer/Footer';
 import { CoffeePrice } from './pages/CoffeePrice/CoffeePrice';
 import store from './Redux/store';
-import { fetchData, loadData } from './Redux/coffee/coffeeSlice';
+import { fetchData, fetchAllComments } from './Redux/coffee/coffeeSlice';
 import { CakesPrice } from './pages/CakesPrice/CakesPrice';
 import { Comments } from './pages/Comments/Comments';
 
@@ -20,8 +20,30 @@ export default function App() {
 
   useEffect(() => {
     dispatch(fetchData());
+    dispatch(fetchAllComments())
   }, [dispatch]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.body.offsetHeight;
+      const scrollPosition = window.scrollY;
+
+      if (windowHeight + scrollPosition >= documentHeight) {
+        window.scrollTo(0, scrollPosition - 1);
+      }
+
+      if (scrollPosition === 0) {
+        window.scrollTo(0, 1);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <Provider store={store}>

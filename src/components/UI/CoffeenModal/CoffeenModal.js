@@ -35,20 +35,6 @@ export const CoffeenModal = ({ isOpen, onClose, coffee, setCoffee, el, initialCo
         setCoffee(initialCoffeeValue)
         onClose();
     };
-    useEffect(() => {
-        const handleScroll = () => {
-            onClose();
-        };
-
-        if (isOpen) {
-            window.addEventListener("scroll", handleScroll);
-        }
-
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, [isOpen, onClose]);
-
 
     return (
         <div>
@@ -56,50 +42,62 @@ export const CoffeenModal = ({ isOpen, onClose, coffee, setCoffee, el, initialCo
                 <div className={styles.overlay} onClick={handleOverlayClick}>
                     <div className={modalClassName}>
                         <div className={styles.closeButton} onClick={onClose}>&times;</div>
-                        <div className={styles.modalContent}>
-                            <h2>Настройка кофе</h2>
-                            <img className={styles.modalImg} src={el.url} alt="Coffee" width={"20vh"} />
-                            <div className={styles.options}>
-                                <h4>Выберите объем:</h4>
+                        <div className={styles.options}>
+                            <div className={styles.optionsMain}>
                                 <div>
-                                    {Object.keys(el.cost).map((ml) => (
-                                        <button
-                                            key={ml}
-                                            disabled={coffee.size === ml}
-                                            onClick={() => handleSizeChange(ml)}
-                                        >
-                                            <CiCoffeeCup />
-                                            {ml * 1000}мл
-                                        </button>
-                                    ))}
+                                    <img className={styles.modalImg} src={el.url} alt="Coffee" />
+                                    <h2>{el.name}</h2>
                                 </div>
-                                <h4>Выберите сироп:</h4>
-                                <select value={coffee.sirop} onChange={handleSiropChange}>
-                                    {el.sirops.map((sirop) => (
-                                        <option key={sirop}>{sirop}</option>
-                                    ))}
-                                </select>
-                                <div className={styles.optionsContainer}>
-                                    <h4>Добавить сахар? ^_^</h4>
-                                    <input
-                                        type="checkbox"
-                                        checked={coffee.sugar}
-                                        onChange={handleSugarChange}
-                                    />
+                                <div className={styles.optionItems}>
+                                    <div>
+                                        <h4>Выберите объем:</h4>
+                                        <div>
+                                            {Object.keys(el.cost).map((ml) => (
+                                                <button
+                                                    key={ml}
+                                                    disabled={coffee.size === ml}
+                                                    onClick={() => handleSizeChange(ml)}
+                                                >
+                                                    <CiCoffeeCup />
+                                                    {ml * 1000}мл
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4>Выберите сироп:</h4>
+                                        <select value={coffee.sirop} onChange={handleSiropChange}>
+                                            {el.sirops.map((sirop) => (
+                                                <option key={sirop}>{sirop}</option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                    <div className={styles.optionsContainer}>
+                                        <h4>Добавить сахар?</h4>
+                                        <input
+                                            type="checkbox"
+                                            checked={coffee.sugar}
+                                            onChange={handleSugarChange}
+                                        />
+                                    </div>
+                                    <div>
+                                        <h4>Выберите количество:</h4>
+                                        <div className={styles.optionsContainer}>
+                                            <button className={styles.btnHandleCount}
+                                                disabled={coffee.count === 1}
+                                                onClick={() => handleCountChange(coffee.count - 1)}
+                                            >
+                                                -
+                                            </button>
+                                            <p>{coffee.count}</p>
+                                            <button className={styles.btnHandleCount} onClick={() => handleCountChange(coffee.count + 1)}>
+                                                +
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <h4>Выберите количество:</h4>
-                                <div className={styles.optionsContainer}>
-                                    <button className={styles.btnHandleCount}
-                                        disabled={coffee.count === 1}
-                                        onClick={() => handleCountChange(coffee.count - 1)}
-                                    >
-                                        -
-                                    </button>
-                                    <p>{coffee.count}</p>
-                                    <button className={styles.btnHandleCount} onClick={() => handleCountChange(coffee.count + 1)}>
-                                        +
-                                    </button>
-                                </div>
+                            </div>
+                            <div className={styles.optionsBuy}>
                                 <p>Цена: {coffee.cost * coffee.count}₽</p>
                                 <button
                                     className={styles.modalButton}

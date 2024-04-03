@@ -8,13 +8,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 2;
 }
 
 .modalContent {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-direction: column;
     background-color: #fff;
     padding: 40px;
     border-radius: 8px;
-    width: 400px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -22,7 +26,7 @@
     margin-bottom: 20px;
 }
 
-input,
+.modalContent input,
 textarea {
     width: 100%;
     padding: 10px;
@@ -30,21 +34,38 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+.modalContent textarea {
+    height: 200px;
+    resize: none;
+}
 
 .rating {
     display: flex;
-    margin-bottom: 20px;
-    gap: 2px;
+    flex-direction: column;
+    align-items: center;
 }
-.rating p {
+.rating ul {
+    display: flex;
+    list-style-type: none;
+}
+.rating li {
     color: #ccc;
     cursor: pointer;
     font-size: 24px;
     margin-right: 5px;
 }
-.rating p:hover {
+.rating li:hover {
     color: #f7e123;
 }
 .rating .selectedStar {
     color: #f7e123;
+}
+.submitButton {
+    cursor: pointer;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    transition: background-color 0.3s ease-in-out;
+    border-radius: 20px;
 }

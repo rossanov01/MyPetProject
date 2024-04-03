@@ -15,14 +15,18 @@ export const CommentItem = ({ comment }) => {
     return (
         <div className={styles.commentItemContainer} key={comment.id}>
             <img src={comment.url} alt={comment.name} />
-            <div className={styles.commentContent}>
-                <h3>{comment.name}</h3>
-                <p>{comment.text}</p>
-                <div className={styles.starRating}>
-                    {renderStars(comment.rate)}
+            <div>
+                <div className={styles.commentContent}>
+                    <div>
+                        <h6>{comment.name}</h6>
+                        <div className={styles.starRating}>
+                            {renderStars(comment.rate)}
+                        </div>
+                    </div>
+                    <p>{comment.text}</p>
                 </div>
+                <p className={styles.commentTime}>{formattedTime}</p>
             </div>
-            <p className={styles.commentTime}>Время написания: {formattedTime}</p>
         </div>
     );
 };

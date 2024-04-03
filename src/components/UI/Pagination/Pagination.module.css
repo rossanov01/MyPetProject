@@ -13,14 +13,16 @@
 
 .pagination ul li {
     cursor: pointer;
+    background-color: #ddb892;
     margin: 0 5px;
     cursor: pointer;
     border: 1px solid #ccc;
     padding: 5px 10px;
     user-select: none;
+    border-radius: 10px;
 }
 
 .pagination ul li.active {
-    background-color: #007bff;
+    background-color: #996e50;
     color: #fff;
 }

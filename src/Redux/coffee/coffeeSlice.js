@@ -74,6 +74,24 @@ export const addComment = createAsyncThunk(
         }
     }
 );
+export const submitOrder = createAsyncThunk(
+    'coffee/submitOrder',
+    async (orderData, thunkAPI) => {
+        try {
+            const resp = await fetch(`http://localhost:3000/orders`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(orderData),
+            });
+            const json = await resp.json();
+            return json;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error.message);
+        }
+    }
+);
 export const coffeeSlice = createSlice({
     name: 'coffee',
     initialState,
@@ -107,6 +125,10 @@ export const coffeeSlice = createSlice({
             }
             state.total = state.basket.reduce((acc, item) => acc + item.cost * item.count, 0)
             localStorage.setItem('basket', JSON.stringify(state.basket))
+        },
+        clearBasket: (state) => {
+            state.basket = [];
+            state.total = 0;
         }
     },
     extraReducers: (builder) => {
@@ -127,5 +149,5 @@ export const coffeeSlice = createSlice({
     },
 });
 
-export const { addToBasket, calculateTotal, handleDeleteItem, handleQuantityChange } = coffeeSlice.actions;
+export const { addToBasket, calculateTotal, handleDeleteItem, handleQuantityChange, clearBasket } = coffeeSlice.actions;
 export default coffeeSlice.reducer;

@@ -9,25 +9,30 @@ export const BusketModalCoffee = ({ item, index }) => {
 
 
     return (
-        <li key={item.id} className={styles.item}>
+        <div key={item.id} className={styles.item}>
             <div className={styles.itemCoffee}>
                 <img src={item.url} alt={item.name} />
                 <div>
-                    <h7>{item.name}</h7>
-                    <p>Объём: {item.size * 1000} мл</p>
-                    <p>Сироп: {item.sirop}</p>
-                    <p>Сахар: {item.sugar ? 'Добавлен' : 'Не добавлен'}</p>
+                    <h6>{item.name}</h6>
+                    {item.sirop && <div>
+                        <p className={styles?.feature}>Объём: {item?.size * 1000} мл</p>
+                        <p className={styles?.feature}>Сироп: {item?.sirop === 'Без сиропа' ? 'б/с' : item.sirop.slice(0, 3)}.</p>
+                        <p className={styles?.feature}>Сахар: {item?.sugar ? "✔" : 'X'}</p>
+                    </div>}
                 </div>
             </div>
             <div className={styles.quanitity}>
-                Количество:
-                <button onClick={() => dispatch(handleQuantityChange({ index, count: item.count - 1 }))}>-</button>
-                <span>{item.count}</span>
-                <button onClick={() => dispatch(handleQuantityChange({ index, count: item.count + 1 }))}>+</button>
-                <span>С вас: {item.cost * item.count}₽</span>
+                <div>
+                    <div>
+                        <button onClick={() => dispatch(handleQuantityChange({ index, count: item.count - 1 }))}>-</button>
+                        <p>{item.count}</p>
+                        <button onClick={() => dispatch(handleQuantityChange({ index, count: item.count + 1 }))}>+</button>
+                    </div>
+                </div>
+                <p>{item.cost * item.count}₽</p>
+                <button className={styles.deleteIcon} onClick={() => dispatch(handleDeleteItem(item.id))}>&times;</button>
             </div>
-            <button className={styles.deleteIcon} onClick={() => dispatch(handleDeleteItem(item.id))}>&times;</button>
 
-        </li>
+        </div>
     );
 };

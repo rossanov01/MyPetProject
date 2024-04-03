@@ -54,10 +54,13 @@ export const Comments = () => {
 
     return (
         <div className={styles.commentsContainer}>
-            <h2>Наши отзывы</h2>
+            <div className={styles.commentsTitle}>
+                <h2>Наши отзывы</h2>
+                <button className={styles.addButton} onClick={openModal}>Добавить комментарий</button>
+            </div>
             <div className={styles.sortContainer}>
                 <div>
-                    <label>Сортировать по:</label>
+                    <label><p>Сортировать по:</p></label>
                     <select value={sortBy} onChange={handleSortChange}>
                         <option value="newest">Сначала новые</option>
                         <option value="oldest">Сначала старые</option>
@@ -65,7 +68,6 @@ export const Comments = () => {
                         <option value="negative">Отрицательные сначала</option>
                     </select>
                 </div>
-                <button className={styles.addButton} onClick={openModal}>Добавить</button>
             </div>
             {visibleComments.map(comment => <CommentItem key={uuidv4} comment={comment} />)}
             <Pagination currentPage={currentPage} totalPages={totalPages} setCurrentPage={setCurrentPage} />

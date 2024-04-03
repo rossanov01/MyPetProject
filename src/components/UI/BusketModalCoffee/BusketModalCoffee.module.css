@@ -2,13 +2,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 30px 0px;
     border-bottom: 1px solid #ccc;
+    font-size: 18px;
+    text-align: left;
 }
 .itemCoffee {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
 .itemCoffee img {
     width: 100px;
@@ -16,28 +18,54 @@
     object-fit: cover;
     margin-right: 20px;
     border-radius: 20px;
+    border: 2px solid black;
+}
+.feature {
+    font-size: 14px;
 }
 .quanitity {
     display: flex;
-    align-items: baseline;
-    gap: 15px;
+    align-items: center;
+    gap: 20px;
+}
+.quanitity div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 .item button {
-    background-color: #3498db;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    padding: 5px 10px;
+    background-color: #ddb892;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    width: 35px;
     cursor: pointer;
     color: white;
+    font-size: 20px;
+    padding: 5px;
+    transition: background-color 0.5s ease;
 }
 
 .item button:hover {
-    background-color: #f0f0f0;
-    color: black;
+    background-color: green;
 }
-.deleteIcon {
+.item .deleteIcon {
     cursor: pointer;
+    background-color: #996e50;
+}
+.item .deleteIcon:hover {
     background-color: red;
-    color: red;
-    font-size: 20px;
+}
+@media (max-width: 729px) {
+    .item {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .itemCoffee {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .quanitity {
+        width: 100%;
+        justify-content: center;
+    }
 }

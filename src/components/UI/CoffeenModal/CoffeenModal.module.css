@@ -8,17 +8,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 }
 .modal {
     background-color: #fff;
-    padding: 20px;
+    padding: 40px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     position: relative;
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
-    min-width: 30vw;
-    min-height: 60vh;
+    color: black;
 }
 
 .modalClosed {
@@ -29,11 +29,14 @@
 
 .modalContent {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
 }
 .modalImg {
-    width: 30vh;
+    width: 250px;
+    height: 200px;
+    border: 2px solid black;
+    border-radius: 20px;
 }
 
 .closeButton {
@@ -46,7 +49,23 @@
 }
 
 .options {
-    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+}
+.optionsMain {
+    display: flex;
+    gap: 30px;
+}
+.optionsMain > div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+}
+.optionItems {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,20 +83,20 @@
     border: 1px solid #ddd;
     border-radius: 4px;
 }
-
 .options button {
     cursor: pointer;
-    background-color: #3498db;
+    background-color: #ddb892;
     color: white;
     transition: background-color 0.3s ease-in-out;
+    border-radius: 20px;
 }
 
 .options button:hover {
-    background-color: #2980b9;
+    background-color: green;
 }
 
 .options button:disabled {
-    background-color: #1ac5bd;
+    background-color: #996e50;
     border: 2px solid #000000;
     cursor: not-allowed;
 }
@@ -85,6 +104,7 @@
     display: flex;
     gap: 20px;
     align-items: center;
+    justify-content: center;
 }
 .options .btnHandleCount {
     font-size: 24px;
@@ -97,7 +117,25 @@
     border: 2px solid black;
 }
 .options .btnHandleCount:disabled {
-    background-color: #0aa0ad;
-    opacity: 0.4;
+    background-color: #ddb892;
     color: white;
+}
+.optionsBuy {
+    text-align: center;
+    gap: 20px;
+}
+@media (max-width: 729px) {
+    .modalImg {
+        width: 150px;
+        height: 120px;
+    }
+    .optionsMain {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .modal {
+        padding: 10px;
+    }
 }

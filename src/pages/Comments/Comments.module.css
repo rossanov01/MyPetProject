@@ -1,13 +1,22 @@
 .commentsContainer {
-    width: 70%;
-    margin: 0 auto;
+    width: 1015px;
+    margin: 30px auto;
     height: 100%;
-    padding: 20px;
+    padding: 40px;
+}
+.commentsTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .sortContainer {
     display: flex;
-    margin-bottom: 10px;
+    margin: 10px 0px;
     justify-content: space-between;
+}
+.sortContainer > div {
+    display: flex;
+    align-items: center;
 }
 
 .sortContainer label {
@@ -28,11 +37,22 @@
     border: none;
     background-color: #3498db;
     color: white;
-    padding: 8px 0;
+    padding: 10px;
     transition: background-color 0.3s ease-in-out;
-    width: 150px;
+    border-radius: 20px;
 }
 
 .addButton:hover {
     background-color: #0056b3;
+}
+@media (min-width: 729px) and (max-width: 1024px) {
+    .commentsContainer {
+        width: 100%;
+    }
+}
+@media (max-width: 729px) {
+    .commentsContainer {
+        width: 100%;
+        padding: 5px;
+    }
 }

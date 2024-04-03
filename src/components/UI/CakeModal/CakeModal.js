@@ -44,21 +44,22 @@ export const CakeModal = ({ isOpen, onClose, cake, setCake, el, initialCakeValue
                     <div className={modalClassName}>
                         <div className={styles.modalContent}>
                             <h2>{el.name}</h2>
-                            <img className={styles.modalImg} src={el.url} alt="Coffee" width={"20vh"} />
+                            <img className={styles.modalImg} src={el.url} alt="Coffee" />
                         </div>
                         <div className={styles.options}>
                             <h4>Выберите количество:</h4>
                             <div className={styles.optionsContainer}>
-                                <button
+                                <button className={styles.btnHandleCount}
                                     disabled={cake.count === 1}
                                     onClick={() => handleCountChange(cake.count - 1)}
                                 >
                                     -
                                 </button>
                                 <p>{cake.count}</p>
-                                <button onClick={() => handleCountChange(cake.count + 1)}>
+                                <button className={styles.btnHandleCount} onClick={() => handleCountChange(cake.count + 1)}>
                                     +
                                 </button>
+
                             </div>
                             <p>Цена: {cake.cost * cake.count}₽</p>
                             <button

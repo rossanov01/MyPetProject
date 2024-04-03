@@ -8,17 +8,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 }
 .modal {
     background-color: #fff;
-    padding: 20px;
+    padding: 60px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     position: relative;
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
-    min-width: 40vw;
-    min-height: 50vh;
+    color: black;
 }
 
 .modalClosed {
@@ -30,10 +30,15 @@
 .modalContent {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 .modalImg {
-    width: 30vh;
+    width: 250px;
+    height: 200px;
+    border: 2px solid black;
+    border-radius: 20px;
 }
 
 .closeButton {
@@ -46,10 +51,11 @@
 }
 
 .options {
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
+    padding: 20px;
 }
 
 .options h4 {
@@ -59,29 +65,59 @@
 .options button,
 .options select,
 .options input {
-    margin: 5px 0;
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
 }
-
 .options button {
     cursor: pointer;
-    background-color: #3498db;
+    background-color: #ddb892;
     color: white;
     transition: background-color 0.3s ease-in-out;
+    border-radius: 20px;
 }
 
 .options button:hover {
-    background-color: #2980b9;
+    background-color: green;
 }
 
 .options button:disabled {
-    background-color: #ccc;
+    background-color: #996e50;
+    border: 2px solid #000000;
     cursor: not-allowed;
 }
 .optionsContainer {
     display: flex;
     gap: 20px;
     align-items: center;
+    justify-content: center;
+}
+.options .btnHandleCount {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+}
+.options .btnHandleCount:disabled {
+    background-color: #ddb892;
+    color: white;
+}
+@media (max-width: 729px) {
+    .modalImg {
+        width: 150px;
+        height: 120px;
+    }
+    .optionsMain {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .modal {
+        padding: 40px;
+    }
 }

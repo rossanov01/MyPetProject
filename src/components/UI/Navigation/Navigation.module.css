@@ -1,6 +1,5 @@
 .navigation {
     display: flex;
-    margin-top: 20px;
 }
 
 .navigation ul {
@@ -27,35 +26,37 @@
     color: black;
 }
 
-.burgerMenu {
-    display: none;
-    cursor: pointer;
-}
-
-.menuDropdown {
-    display: none;
-    position: absolute;
-    background-color: #333;
-    bottom: 20px;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.menuDropdown.active {
-    display: flex;
-    flex-direction: column;
-}
-
-.burgerIcon {
-    font-size: 24px;
-}
-
-@media (max-width: 1024px) {
-    .navigation ul {
-        display: none;
+@media (min-width: 375px) and (max-width: 729px) {
+    .navigation {
+        right: 20px;
+        padding: 10px;
     }
-
-    .burgerMenu {
-        display: block;
+    .navigation ul {
+        display: flex;
+        flex-direction: column;
+        right: 0px;
+        color: black;
+    }
+    .navigation li {
+        padding: 10px;
+        width: 100%;
+        margin-top: 5px;
+        border-radius: 20px;
+        text-align: center;
+        text-align: left;
+    }
+    .navigation li:hover {
+        background-color: black;
+        color: blue;
+    }
+    .navigation a {
+        text-decoration: none;
+        font-size: 20px;
+        padding: 0px;
+        border-radius: 0px;
+    }
+    .navigation a:hover {
+        background-color: black;
+        color: white;
     }
 }

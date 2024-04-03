@@ -8,21 +8,22 @@ export const BusketModalCake = ({ item, index }) => {
     const dispatch = useDispatch();
 
     return (
-        <li key={item.id} className={styles.item}>
+        <div key={item.id} className={styles.item}>
             <div className={styles.itemCake}>
                 <img src={item.url} alt={item.name} />
-                <h7>{item.name}</h7>
+                <h6>{item.name}</h6>
             </div>
 
-            <div className={styles.quanitity}>
-                Количество:
-                <button onClick={() => dispatch(handleQuantityChange({ index, count: item.count - 1 }))}>-</button>
-                <span>{item.count}</span>
-                <button onClick={() => dispatch(handleQuantityChange({ index, count: item.count + 1 }))}>+</button>
-                <span>С вас: {item.cost * item.count}₽</span>
+            <div className={styles.itemUseButtons}>
+                <div className={styles.quanitity}>
+                    <button onClick={() => dispatch(handleQuantityChange({ index, count: item.count - 1 }))}>-</button>
+                    <p>{item.count}</p>
+                    <button onClick={() => dispatch(handleQuantityChange({ index, count: item.count + 1 }))}>+</button>
+                </div>
+                <p>{item.cost * item.count}₽</p>
+                <button className={styles.deleteIcon} onClick={() => dispatch(handleDeleteItem(item.id))}>&times;</button>
             </div>
-            <button className={styles.deleteIcon} onClick={() => dispatch(handleDeleteItem(item.id))}>&times;</button>
 
-        </li>
+        </div>
     );
 };

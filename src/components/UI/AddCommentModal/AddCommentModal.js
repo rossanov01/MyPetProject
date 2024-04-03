@@ -12,13 +12,9 @@ export const AddCommentModal = ({ closeModal }) => {
     const [nameError, setNameError] = useState(false);
     const [textError, setTextError] = useState(false);
     const [ratingError, setRatingError] = useState(false);
-    const modalRef = useRef(null);
+    const modalRef = useRef();
 
     const handleRatingClick = (value) => {
-        setRating(value);
-    };
-
-    const handleMouseOver = (value) => {
         setRating(value);
     };
 
@@ -31,17 +27,6 @@ export const AddCommentModal = ({ closeModal }) => {
             closeModal();
         }
     };
-
-    useEffect(() => {
-        const handleClick = (event) => {
-            handleClickOutside(event);
-        };
-
-        document.addEventListener("mousedown", handleClick);
-        return () => {
-            document.removeEventListener("mousedown", handleClick);
-        };
-    }, [closeModal]);
 
     const handleSubmit = () => {
         if (!name) {
@@ -76,12 +61,12 @@ export const AddCommentModal = ({ closeModal }) => {
     };
 
     return (
-        <div className={styles.modal} ref={modalRef}>
-            <div className={styles.modalContent}>
-                <h3>Добавить комментарий</h3>
+        <div className={styles.modal} onClick={handleClickOutside}>
+            <div className={styles.modalContent} ref={modalRef}>
+                <h4>Добавить комментарий</h4>
                 <input
                     type="text"
-                    placeholder="Имя"
+                    placeholder="Ваше имя"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                 />
@@ -93,16 +78,19 @@ export const AddCommentModal = ({ closeModal }) => {
                 />
                 {textError && <p className={styles.errorMessage}>*Пожалуйста, введите текст комментария</p>}
                 <div className={styles.rating}>
-                    {[...Array(10)].map((_, index) => (
-                        <p
-                            key={index + 1}
-                            className={index < rating ? styles.selectedStar : styles.star}
-                            onMouseOver={() => handleMouseOver(index + 1)}
-                            onClick={() => handleRatingClick(index + 1)}
-                        >
-                            ★
-                        </p>
-                    ))}
+                    <p>Поставьте нам рейтинг:</p>
+
+                    <ul>
+                        {[...Array(5)].map((_, index) => (
+                            <li
+                                key={index + 1}
+                                className={index < rating ? styles.selectedStar : styles.star}
+                                onClick={() => handleRatingClick(index + 1)}
+                            >
+                                ★
+                            </li>
+                        ))}
+                    </ul>
                 </div>
                 {ratingError && <p className={styles.errorMessage}>*Пожалуйста, выберите рейтинг</p>}
                 <button className={styles.submitButton} onClick={handleSubmit}>Отправить</button>

@@ -1,11 +1,13 @@
 .aboutUs {
-    max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px;
+    background: linear-gradient(297deg, black, #00000082);
+    color: white;
 }
 
-.aboutUs h2 {
+.aboutUs h3 {
     margin-bottom: 15px;
+    text-align: center;
 }
 
 .aboutUs p {

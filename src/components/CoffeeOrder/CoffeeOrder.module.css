@@ -1,8 +1,13 @@
 .CoffeeOrder {
-    min-height: 100vh;
     display: flex;
+    align-items: center;
     flex-direction: column;
-    padding: 20px 20vh;
+    padding: 20px 20px;
+    background: linear-gradient(280deg, black, #0000009e);
+    color: white;
+}
+.container {
+    width: 1000px;
 }
 .CoffeeOrderTitle {
     margin-bottom: 20px;
@@ -12,6 +17,8 @@
 }
 
 .OrderFilter {
+    display: flex;
+    gap: 20px;
     margin-bottom: 20px;
 }
 
@@ -23,7 +30,48 @@
     background-color: #fff;
     font-size: 16px;
 }
+.OrderFilterItem {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.OrderFilterItem > div {
+    display: flex;
+    align-items: center;
+}
 
 .CoffeeItemList {
+    display: flex;
     gap: 20px;
+}
+@media (min-width: 729px) and (max-width: 1024px) {
+    .CoffeeOrder {
+        padding: 30px 20px;
+    }
+    .container {
+        width: 100%;
+    }
+    .OrderFilter {
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width: 729px) {
+    .CoffeeOrder {
+        padding: 30px 10px;
+    }
+    .container {
+        width: 100%;
+    }
+    .OrderFilter {
+        display: flex;
+        flex-direction: column;
+    }
+    .OrderFilterItem > div {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+    }
 }

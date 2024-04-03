@@ -1,34 +1,35 @@
 .menuItem {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 20px;
     border: 1px solid #ddd;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    box-sizing: content-box;
+    min-height: 400px;
+    gap: 20px;
 }
-
-.menuItemAside {
+.menuItem div {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
     align-items: center;
 }
-
-.menuItemTitle {
-    margin-right: 20px;
-}
-
-.menuItemTitle h5 {
-    font-size: 18px;
-    margin-bottom: 5px;
-}
-
-.menuItemTitle p {
-    color: #ebdada;
-}
-
 .MenuItemImg {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 1024px) {
+    .menuItem {
+        min-height: auto;
+    }
+    .MenuItemImg {
+        width: 15vw;
+        height: 15vw;
+    }
 }
