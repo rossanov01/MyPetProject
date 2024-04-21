@@ -16,6 +16,9 @@ export const BusketModal = ({ isOpen, closeModal }) => {
         delivery: 'courier'
     }
 
+    const [showValidationMessages, setShowValidationMessages] = useState(false);
+    const [missingFields, setMissingFields] = useState([]);
+
     const dispatch = useDispatch();
     const basket = useSelector((state) => state.coffee.basket);
     const total = useSelector((state) => state.coffee.total);
@@ -37,6 +40,15 @@ export const BusketModal = ({ isOpen, closeModal }) => {
     }, []);
 
     const handleSubmit = () => {
+        const requiredFields = ['name', 'phone', 'index', 'house', 'floor'];
+        const missing = requiredFields.filter(field => !formData[field]);
+
+        if (missing.length > 0) {
+            setShowValidationMessages(true);
+            setMissingFields(missing);
+            return;
+        }
+
         const orderData = {
             basket,
             total,
@@ -83,11 +95,15 @@ export const BusketModal = ({ isOpen, closeModal }) => {
                         <div className={styles.detailsOrder}>
                             <h6>Контактные данные</h6>
                             <input name="name" value={formData.name} onChange={handleChange} placeholder='Имя' />
+                            {showValidationMessages && missingFields.includes('name') && <p className={styles.errorMessage}>* Нужно заполнить имя</p>}
                             <input name="phone" value={formData.phone} onChange={handleChange} placeholder='Телефон' />
-                            <h6>Адрес</h6>
+                            {showValidationMessages && missingFields.includes('phone') && <p className={styles.errorMessage}>* Нужно заполнить телефон</p>}
                             <input name="index" value={formData.index} onChange={handleChange} placeholder='Индекс' />
+                            {showValidationMessages && missingFields.includes('index') && <p className={styles.errorMessage}>* Нужно заполнить индекс</p>}
                             <input name="house" value={formData.house} onChange={handleChange} placeholder='Улицца,дом,квартира' />
+                            {showValidationMessages && missingFields.includes('house') && <p className={styles.errorMessage}>* Нужно заполнить адрес</p>}
                             <input name="floor" value={formData.floor} onChange={handleChange} placeholder='Подъезд,этаж,код домофона' />
+                            {showValidationMessages && missingFields.includes('floor') && <p className={styles.errorMessage}>* Нужно заполнить этаж</p>}
                             <h6>Вариант Оплаты</h6>
                             <select name="paymentOption" value={formData.paymentOption} onChange={handleChange}>
                                 <option value="cash">Оплата наличными</option>
